@@ -17,24 +17,37 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def testData = findTestData('Data Files/dataProduct')
-def userName = testData.getObjectValue('Username', 6)
-def password = testData.getObjectValue('Password', 1)
-def productName = testData.getObjectValue('productName', 1)
-
-WebUI.comment(userName)
-WebUI.comment(password)
-
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.saucedemo.com/')
 
-WebUI.setText(findTestObject('Object Repository/saucedemo/Page_Swag Labs/input_Swag Labs_user-name'), userName)
+CustomKeywords.'helper.Login.login'()
 
-WebUI.setText(findTestObject('Object Repository/saucedemo/Page_Swag Labs/input_Swag Labs_password'), password)
+String actual_result = WebUI.getText(findTestObject('Object Repository/saucedemo/Page_Swag Labs/span_Products'))
 
-WebUI.click(findTestObject('Object Repository/saucedemo/Page_Swag Labs/input_Swag Labs_login-button'))
+WebUI.verifyMatch(actual_result, 'Products', false)
 
-WebUI.click(findTestObject('Object Repository/Product', [productName: productName]))
+System.out.println(WebUI.verifyElementPresent(findTestObject('Object Repository/saucedemo/Page_Swag Labs/span_Products'), 5))
+
+WebUI.click(findTestObject('Object Repository/saucedemo4/Page_Swag Labs/button_Add to cart'))
+
+WebUI.click(findTestObject('Object Repository/saucedemo4/Page_Swag Labs/a_1'))
+
+String actual_result2 = WebUI.getText(findTestObject('Object Repository/saucedemo/Page_Swag Labs/button_Continue Shopping'))
+
+WebUI.verifyMatch(actual_result2, 'Continue Shopping', false)
+
+System.out.println(WebUI.verifyElementPresent(findTestObject('Object Repository/saucedemo/Page_Swag Labs/button_Continue Shopping'), 5))
+
+WebUI.click(findTestObject('Object Repository/saucedemo4/Page_Swag Labs/button_Checkout'))
+
+CustomKeywords.'helper.InformationCheckout.informationCheckout'()
+
+String actual_result3 = WebUI.getText(findTestObject('Object Repository/saucedemo/Page_Swag Labs/span_Checkout Overview'))
+
+WebUI.verifyMatch(actual_result3, 'Checkout: Overview', false)
+
+System.out.println(WebUI.verifyElementPresent(findTestObject('Object Repository/saucedemo/Page_Swag Labs/span_Checkout Overview'), 5))
+
 
 

@@ -1,0 +1,16 @@
+{
+  "keywordFileContentHash": "445F60A72961EAE4669D6AAEA6B660ED",
+  "keywordClasses": [
+    {
+      "name": "helper.InformationCheckout",
+      "keywordMethods": [
+        {
+          "name": "informationCheckout",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

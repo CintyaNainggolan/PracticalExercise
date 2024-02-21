@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>chooseProduct</name>
+   <name>T1 - Select a product to see its details</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>48465137-e898-455e-a2cd-ccad3cedfd31</testCaseGuid>

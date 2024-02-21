@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "15F0D1E1E4C250DD2AB10223B6FB45CA",
+  "keywordClasses": [
+    {
+      "name": "checkout.informationCheckout",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
